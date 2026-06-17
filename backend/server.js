@@ -3,6 +3,8 @@ import cors from 'cors';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import connectDB from './config/db.js';
 import contactRoutes from './routes/contactRoutes.js';
 import { errorHandler, notFound } from './middleware-error.js';
@@ -10,6 +12,8 @@ import { errorHandler, notFound } from './middleware-error.js';
 dotenv.config();
 await connectDB();
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const app = express();
 const allowedOrigins = (process.env.FRONTEND_URL || 'http://localhost:5173,http://127.0.0.1:5174')
   .split(',')
@@ -33,6 +37,15 @@ app.get('/health', (req, res) => {
 });
 
 app.use('/api/contact', contactRoutes);
+
+if (process.env.NODE_ENV === 'production') {
+  const frontendDist = path.join(__dirname, '..', 'frontend', 'dist');
+  app.use(express.static(frontendDist));
+  app.get(/.*/, (req, res) => {
+    res.sendFile(path.join(frontendDist, 'index.html'));
+  });
+}
+
 app.use(notFound);
 app.use(errorHandler);
 
