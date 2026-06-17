@@ -31,7 +31,7 @@ export const projects = [
     features: ['ATS Scoring', 'Resume Parsing', 'Skill Gap Analysis', 'Suggestions Engine'],
     image: '/project-ai-resume.png',
     mediaClass: 'media-laptop',
-    live: '#contact',
+    live: '/demos/ai-resume-analyzer/',
   },
   {
     title: 'Browser-Based Code Editor',
@@ -39,7 +39,7 @@ export const projects = [
     features: ['Live Preview', 'Real Time Execution', 'File Download', 'Theme Switching'],
     image: '/project-code-editor.png',
     mediaClass: 'media-laptop',
-    live: '#contact',
+    live: '/demos/code-editor/',
   },
   {
     title: 'RF Transmission Drone',

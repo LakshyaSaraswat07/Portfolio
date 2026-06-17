@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Resume Analyzer Demo</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --cyan: #00f5ff;
+        --violet: #7b61ff;
+        --pink: #ff4d8d;
+        --bg: #0a0a0a;
+        --card: rgba(255, 255, 255, 0.08);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: white;
+        background:
+          radial-gradient(circle at 15% 15%, rgba(0, 245, 255, 0.22), transparent 28%),
+          radial-gradient(circle at 85% 10%, rgba(255, 77, 141, 0.18), transparent 24%),
+          linear-gradient(135deg, #07070b, var(--bg));
+      }
+      main {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 40px 0;
+      }
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+      a { color: var(--cyan); text-decoration: none; }
+      .badge {
+        border: 1px solid rgba(255,255,255,.18);
+        border-radius: 999px;
+        padding: 8px 14px;
+        color: rgba(255,255,255,.72);
+      }
+      h1 { font-size: clamp(2rem, 6vw, 4.8rem); line-height: .95; margin: 0 0 16px; }
+      .lead { max-width: 720px; color: rgba(255,255,255,.72); font-size: 1.08rem; line-height: 1.7; }
+      .grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 18px; margin-top: 30px; }
+      .card {
+        border: 1px solid rgba(255,255,255,.14);
+        background: var(--card);
+        border-radius: 18px;
+        box-shadow: 0 24px 70px rgba(0,0,0,.35);
+        backdrop-filter: blur(20px);
+        padding: 22px;
+      }
+      textarea {
+        width: 100%;
+        min-height: 300px;
+        resize: vertical;
+        border: 1px solid rgba(255,255,255,.14);
+        border-radius: 14px;
+        background: rgba(0,0,0,.35);
+        color: white;
+        padding: 16px;
+        line-height: 1.6;
+      }
+      button {
+        width: 100%;
+        margin-top: 14px;
+        border: 0;
+        border-radius: 14px;
+        padding: 14px 18px;
+        color: #020308;
+        font-weight: 800;
+        cursor: pointer;
+        background: linear-gradient(135deg, var(--cyan), var(--violet));
+      }
+      .score {
+        display: grid;
+        place-items: center;
+        width: 170px;
+        height: 170px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at center, #10121c 54%, transparent 55%),
+          conic-gradient(var(--cyan) var(--score), rgba(255,255,255,.12) 0);
+        font-size: 2.6rem;
+        font-weight: 900;
+      }
+      .bars { display: grid; gap: 12px; }
+      .bar span { display: flex; justify-content: space-between; color: rgba(255,255,255,.72); margin-bottom: 7px; }
+      .bar i { display: block; height: 10px; border-radius: 999px; background: rgba(255,255,255,.1); overflow: hidden; }
+      .bar em { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--pink), var(--cyan)); }
+      ul { color: rgba(255,255,255,.75); line-height: 1.9; }
+      @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="topbar">
+        <a href="/">Back to Portfolio</a>
+        <span class="badge">Interactive Demo</span>
+      </div>
+      <h1>AI Resume Analyzer & ATS Checker</h1>
+      <p class="lead">Paste resume text below and run a front-end demo analysis for ATS score, keyword coverage, and improvement suggestions.</p>
+      <section class="grid">
+        <div class="card">
+          <textarea id="resume">John Doe
+Software Engineer
+
+Skills: Python, JavaScript, React, Node.js, SQL
+Experience: Built web applications, APIs, dashboards, and automation tools.
+Projects: Resume analyzer, code editor, and full-stack portfolio.</textarea>
+          <button id="analyze">Analyze Resume</button>
+        </div>
+        <div class="card">
+          <div class="score" id="score" style="--score: 82%">82%</div>
+          <div class="bars" id="bars"></div>
+          <h3>Suggestions</h3>
+          <ul id="tips"></ul>
+        </div>
+      </section>
+    </main>
+    <script>
+      const keywords = ["python", "javascript", "react", "node", "api", "project", "sql", "automation"];
+      const bars = document.querySelector("#bars");
+      const tips = document.querySelector("#tips");
+      const score = document.querySelector("#score");
+
+      function analyze() {
+        const text = document.querySelector("#resume").value.toLowerCase();
+        const matched = keywords.filter((word) => text.includes(word));
+        const percent = Math.round((matched.length / keywords.length) * 100);
+        score.textContent = `${percent}%`;
+        score.style.setProperty("--score", `${percent}%`);
+        bars.innerHTML = keywords.slice(0, 5).map((word) => {
+          const value = text.includes(word) ? 92 : 36;
+          return `<div class="bar"><span><b>${word.toUpperCase()}</b><small>${value}%</small></span><i><em style="width:${value}%"></em></i></div>`;
+        }).join("");
+        tips.innerHTML = [
+          "Add measurable achievements with numbers.",
+          "Include role-specific technical keywords.",
+          "Keep project impact clear and concise."
+        ].map((tip) => `<li>${tip}</li>`).join("");
+      }
+
+      document.querySelector("#analyze").addEventListener("click", analyze);
+      analyze();
+    </script>
+  </body>
+</html>

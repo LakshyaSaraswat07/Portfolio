@@ -217,7 +217,7 @@ function Projects() {
               <ul>{project.features.map((feature) => <li key={feature}>{feature}</li>)}</ul>
               {project.live && (
                 <div className="card-actions">
-                  <a href={project.live}><FaExternalLinkAlt />Live Demo</a>
+                  <a href={project.live} target="_blank" rel="noreferrer"><FaExternalLinkAlt />Live Demo</a>
                 </div>
               )}
             </div>

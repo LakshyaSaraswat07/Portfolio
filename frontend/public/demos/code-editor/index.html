@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser Code Editor Demo</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --cyan: #00f5ff;
+        --violet: #7b61ff;
+        --pink: #ff4d8d;
+        --bg: #0a0a0a;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: white;
+        background:
+          radial-gradient(circle at 20% 10%, rgba(123, 97, 255, .24), transparent 26%),
+          radial-gradient(circle at 80% 20%, rgba(0, 245, 255, .18), transparent 25%),
+          #08090f;
+      }
+      .app { width: min(1200px, calc(100% - 28px)); margin: 0 auto; padding: 26px 0; }
+      .topbar { display: flex; justify-content: space-between; align-items: center; gap: 14px; margin-bottom: 18px; }
+      a { color: var(--cyan); text-decoration: none; }
+      h1 { margin: 0; font-size: clamp(1.7rem, 5vw, 3.8rem); }
+      .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+      button {
+        border: 1px solid rgba(255,255,255,.14);
+        border-radius: 12px;
+        padding: 10px 14px;
+        color: white;
+        background: rgba(255,255,255,.08);
+        cursor: pointer;
+        font-weight: 700;
+      }
+      button.primary { color: #020308; border: 0; background: linear-gradient(135deg, var(--cyan), var(--violet)); }
+      .workspace { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+      .panel {
+        min-height: 520px;
+        border: 1px solid rgba(255,255,255,.14);
+        border-radius: 18px;
+        background: rgba(255,255,255,.07);
+        overflow: hidden;
+        box-shadow: 0 24px 70px rgba(0,0,0,.35);
+      }
+      .panel-head { padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.72); }
+      textarea {
+        width: 100%;
+        height: calc(100% - 45px);
+        min-height: 475px;
+        resize: none;
+        border: 0;
+        outline: 0;
+        padding: 18px;
+        color: #eafcff;
+        background: #090b12;
+        font: 14px/1.65 "Cascadia Code", "Fira Code", Consolas, monospace;
+      }
+      iframe { width: 100%; height: calc(100% - 45px); min-height: 475px; border: 0; background: white; }
+      @media (max-width: 860px) { .workspace { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <div class="topbar">
+        <div>
+          <a href="/">Back to Portfolio</a>
+          <h1>Browser-Based Code Editor</h1>
+        </div>
+        <div class="actions">
+          <button id="theme">Switch Theme</button>
+          <button id="download">Download HTML</button>
+          <button class="primary" id="run">Run</button>
+        </div>
+      </div>
+      <section class="workspace">
+        <div class="panel">
+          <div class="panel-head">index.html</div>
+          <textarea id="code"><!doctype html>
+<html>
+  <head>
+    <style>
+      body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        margin: 0;
+        color: white;
+        font-family: system-ui;
+        background: linear-gradient(135deg, #7B61FF, #00F5FF);
+      }
+      .card {
+        padding: 32px;
+        border-radius: 18px;
+        background: rgba(0,0,0,.35);
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Hello from Lakshya's Code Editor</h1>
+      <p>Edit this HTML and click Run.</p>
+    </div>
+  </body>
+</html></textarea>
+        </div>
+        <div class="panel">
+          <div class="panel-head">Live Preview</div>
+          <iframe id="preview" title="Live preview"></iframe>
+        </div>
+      </section>
+    </main>
+    <script>
+      const code = document.querySelector("#code");
+      const preview = document.querySelector("#preview");
+      const run = () => { preview.srcdoc = code.value; };
+      document.querySelector("#run").addEventListener("click", run);
+      code.addEventListener("input", run);
+      document.querySelector("#download").addEventListener("click", () => {
+        const blob = new Blob([code.value], { type: "text/html" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "code-editor-demo.html";
+        link.click();
+        URL.revokeObjectURL(link.href);
+      });
+      document.querySelector("#theme").addEventListener("click", () => {
+        document.body.style.background = document.body.style.background ? "" : "#f5f7fb";
+        document.body.style.color = document.body.style.color ? "" : "#0a0a0a";
+      });
+      run();
+    </script>
+  </body>
+</html>
