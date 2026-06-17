@@ -31,7 +31,7 @@ export const projects = [
     features: ['ATS Scoring', 'Resume Parsing', 'Skill Gap Analysis', 'Suggestions Engine'],
     image: '/project-ai-resume.png',
     mediaClass: 'media-laptop',
-    live: '/demos/ai-resume-analyzer/',
+    live: 'https://project-ai-resume-analyzer.onrender.com/',
   },
   {
     title: 'Browser-Based Code Editor',
@@ -39,7 +39,7 @@ export const projects = [
     features: ['Live Preview', 'Real Time Execution', 'File Download', 'Theme Switching'],
     image: '/project-code-editor.png',
     mediaClass: 'media-laptop',
-    live: '/demos/code-editor/',
+    live: 'https://lakshyasaraswat07.github.io/Project--Browser_Based_Code_Editor/',
   },
   {
     title: 'RF Transmission Drone',
