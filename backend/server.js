@@ -22,6 +22,9 @@ const allowedOrigins = (process.env.FRONTEND_URL || 'http://localhost:5173,http:
 
 app.use(helmet({
   contentSecurityPolicy: false,
+  crossOriginEmbedderPolicy: false,
+  crossOriginOpenerPolicy: false,
+  crossOriginResourcePolicy: false,
 }));
 app.use(cors({
   origin(origin, callback) {
