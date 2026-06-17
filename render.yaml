@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: lakshya-saraswat-portfolio-api
+    name: Lakshya-Saraswat-Portfolio
     runtime: node
     plan: free
     buildCommand: npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix backend
