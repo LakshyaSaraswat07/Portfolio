@@ -3,6 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
+import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import connectDB from './config/db.js';
@@ -43,11 +44,15 @@ app.get('/health', (req, res) => {
 
 app.use('/api/contact', contactRoutes);
 
-if (process.env.NODE_ENV === 'production') {
-  const frontendDist = path.join(__dirname, '..', 'frontend', 'dist');
+const frontendDist = path.join(__dirname, '..', 'frontend', 'dist');
+const frontendIndex = path.join(frontendDist, 'index.html');
+
+if (process.env.NODE_ENV === 'production' || process.env.RENDER || fs.existsSync(frontendIndex)) {
   app.use(express.static(frontendDist));
-  app.get(/.*/, (req, res) => {
-    res.sendFile(path.join(frontendDist, 'index.html'));
+  app.get(/.*/, (req, res, next) => {
+    res.sendFile(frontendIndex, (error) => {
+      if (error) next();
+    });
   });
 }
 
