@@ -20,7 +20,9 @@ const allowedOrigins = (process.env.FRONTEND_URL || 'http://localhost:5173,http:
   .map((origin) => origin.trim())
   .filter(Boolean);
 
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: false,
+}));
 app.use(cors({
   origin(origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
