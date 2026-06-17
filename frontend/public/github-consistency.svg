@@ -1,0 +1,54 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 360" role="img" aria-labelledby="title desc">
+  <title id="title">GitHub consistency and contribution visualization</title>
+  <desc id="desc">A premium dark contribution graph with streak and consistency indicators.</desc>
+  <defs>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#00F5FF"/>
+      <stop offset=".55" stop-color="#7B61FF"/>
+      <stop offset="1" stop-color="#FF4D8D"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1100" height="360" rx="28" fill="#080A0F"/>
+  <circle cx="105" cy="70" r="92" fill="#00F5FF" opacity=".13" filter="url(#glow)"/>
+  <circle cx="990" cy="295" r="115" fill="#FF4D8D" opacity=".12" filter="url(#glow)"/>
+  <text x="44" y="64" fill="#F7FBFF" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="800">GitHub Consistency</text>
+  <text x="44" y="99" fill="#AAB3C5" font-family="Inter,Arial,sans-serif" font-size="17">Contribution rhythm, streak focus, and engineering discipline</text>
+  <g transform="translate(44 142)">
+    <rect width="612" height="142" rx="18" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.16)"/>
+    <g transform="translate(24 24)">
+      <script type="application/ecmascript"><![CDATA[]]></script>
+      <g fill="#102028">
+        <rect x="0" y="0" width="13" height="13" rx="3"/><rect x="22" y="0" width="13" height="13" rx="3"/><rect x="44" y="0" width="13" height="13" rx="3"/><rect x="66" y="0" width="13" height="13" rx="3"/><rect x="88" y="0" width="13" height="13" rx="3"/><rect x="110" y="0" width="13" height="13" rx="3"/><rect x="132" y="0" width="13" height="13" rx="3"/><rect x="154" y="0" width="13" height="13" rx="3"/><rect x="176" y="0" width="13" height="13" rx="3"/><rect x="198" y="0" width="13" height="13" rx="3"/><rect x="220" y="0" width="13" height="13" rx="3"/><rect x="242" y="0" width="13" height="13" rx="3"/><rect x="264" y="0" width="13" height="13" rx="3"/><rect x="286" y="0" width="13" height="13" rx="3"/><rect x="308" y="0" width="13" height="13" rx="3"/><rect x="330" y="0" width="13" height="13" rx="3"/><rect x="352" y="0" width="13" height="13" rx="3"/><rect x="374" y="0" width="13" height="13" rx="3"/><rect x="396" y="0" width="13" height="13" rx="3"/><rect x="418" y="0" width="13" height="13" rx="3"/><rect x="440" y="0" width="13" height="13" rx="3"/><rect x="462" y="0" width="13" height="13" rx="3"/><rect x="484" y="0" width="13" height="13" rx="3"/><rect x="506" y="0" width="13" height="13" rx="3"/><rect x="528" y="0" width="13" height="13" rx="3"/>
+      </g>
+      <g fill="#15323A" transform="translate(0 22)">
+        <rect x="0" y="0" width="13" height="13" rx="3"/><rect x="22" y="0" width="13" height="13" rx="3"/><rect x="44" y="0" width="13" height="13" rx="3"/><rect x="66" y="0" width="13" height="13" rx="3"/><rect x="88" y="0" width="13" height="13" rx="3"/><rect x="110" y="0" width="13" height="13" rx="3"/><rect x="132" y="0" width="13" height="13" rx="3"/><rect x="154" y="0" width="13" height="13" rx="3"/><rect x="176" y="0" width="13" height="13" rx="3"/><rect x="198" y="0" width="13" height="13" rx="3"/><rect x="220" y="0" width="13" height="13" rx="3"/><rect x="242" y="0" width="13" height="13" rx="3"/><rect x="264" y="0" width="13" height="13" rx="3"/><rect x="286" y="0" width="13" height="13" rx="3"/><rect x="308" y="0" width="13" height="13" rx="3"/><rect x="330" y="0" width="13" height="13" rx="3"/><rect x="352" y="0" width="13" height="13" rx="3"/><rect x="374" y="0" width="13" height="13" rx="3"/><rect x="396" y="0" width="13" height="13" rx="3"/><rect x="418" y="0" width="13" height="13" rx="3"/><rect x="440" y="0" width="13" height="13" rx="3"/><rect x="462" y="0" width="13" height="13" rx="3"/><rect x="484" y="0" width="13" height="13" rx="3"/><rect x="506" y="0" width="13" height="13" rx="3"/><rect x="528" y="0" width="13" height="13" rx="3"/>
+      </g>
+      <g fill="#00F5FF" opacity=".9" transform="translate(0 44)">
+        <rect x="0" y="0" width="13" height="13" rx="3"/><rect x="44" y="0" width="13" height="13" rx="3"/><rect x="66" y="0" width="13" height="13" rx="3"/><rect x="110" y="0" width="13" height="13" rx="3"/><rect x="154" y="0" width="13" height="13" rx="3"/><rect x="176" y="0" width="13" height="13" rx="3"/><rect x="220" y="0" width="13" height="13" rx="3"/><rect x="242" y="0" width="13" height="13" rx="3"/><rect x="286" y="0" width="13" height="13" rx="3"/><rect x="330" y="0" width="13" height="13" rx="3"/><rect x="352" y="0" width="13" height="13" rx="3"/><rect x="396" y="0" width="13" height="13" rx="3"/><rect x="418" y="0" width="13" height="13" rx="3"/><rect x="462" y="0" width="13" height="13" rx="3"/><rect x="506" y="0" width="13" height="13" rx="3"/><rect x="528" y="0" width="13" height="13" rx="3"/>
+      </g>
+      <g fill="#7B61FF" transform="translate(0 66)">
+        <rect x="22" y="0" width="13" height="13" rx="3"/><rect x="66" y="0" width="13" height="13" rx="3"/><rect x="88" y="0" width="13" height="13" rx="3"/><rect x="132" y="0" width="13" height="13" rx="3"/><rect x="176" y="0" width="13" height="13" rx="3"/><rect x="198" y="0" width="13" height="13" rx="3"/><rect x="242" y="0" width="13" height="13" rx="3"/><rect x="264" y="0" width="13" height="13" rx="3"/><rect x="308" y="0" width="13" height="13" rx="3"/><rect x="352" y="0" width="13" height="13" rx="3"/><rect x="374" y="0" width="13" height="13" rx="3"/><rect x="418" y="0" width="13" height="13" rx="3"/><rect x="440" y="0" width="13" height="13" rx="3"/><rect x="484" y="0" width="13" height="13" rx="3"/><rect x="528" y="0" width="13" height="13" rx="3"/>
+      </g>
+      <g fill="#FF4D8D" opacity=".85" transform="translate(0 88)">
+        <rect x="44" y="0" width="13" height="13" rx="3"/><rect x="88" y="0" width="13" height="13" rx="3"/><rect x="154" y="0" width="13" height="13" rx="3"/><rect x="220" y="0" width="13" height="13" rx="3"/><rect x="286" y="0" width="13" height="13" rx="3"/><rect x="330" y="0" width="13" height="13" rx="3"/><rect x="396" y="0" width="13" height="13" rx="3"/><rect x="462" y="0" width="13" height="13" rx="3"/><rect x="506" y="0" width="13" height="13" rx="3"/>
+      </g>
+    </g>
+  </g>
+  <g transform="translate(700 142)">
+    <rect width="166" height="142" rx="18" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.16)"/>
+    <text x="24" y="46" fill="#AAB3C5" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="700">Current Streak</text>
+    <text x="24" y="92" fill="url(#accent)" font-family="Inter,Arial,sans-serif" font-size="44" font-weight="900">21</text>
+    <text x="88" y="92" fill="#F7FBFF" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="800">days</text>
+  </g>
+  <g transform="translate(888 142)">
+    <rect width="166" height="142" rx="18" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.16)"/>
+    <text x="24" y="46" fill="#AAB3C5" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="700">Consistency</text>
+    <text x="24" y="92" fill="url(#accent)" font-family="Inter,Arial,sans-serif" font-size="44" font-weight="900">82%</text>
+    <text x="24" y="120" fill="#AAB3C5" font-family="Inter,Arial,sans-serif" font-size="14">weekly rhythm</text>
+  </g>
+  <path d="M44 322h1010" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+</svg>
