@@ -10,7 +10,7 @@ export const profile = {
 
 export const stats = [
   { label: 'Projects Completed', value: 3, suffix: '' },
-  { label: 'Certifications', value: 6, suffix: '+' },
+  { label: 'Certifications', value: 8, suffix: '' },
   { label: 'Technologies', value: 22, suffix: '+' },
   { label: 'Hackathons', value: 4, suffix: '+' },
 ];
@@ -52,12 +52,62 @@ export const projects = [
 ];
 
 export const certifications = [
-  'AWS Fundamentals of ML & AI',
-  'Oracle Generative AI Professional',
-  'NVIDIA Jetson Nano AI',
-  'VLSI & PCB Design',
-  'Infosys Python Programming',
-  'Web Development Certification',
+  {
+    title: 'Fundamentals of Machine Learning and Artificial Intelligence',
+    issuer: 'AWS Training & Certification',
+    description: 'Completed AWS training in core machine learning concepts, artificial intelligence foundations, and practical cloud applications.',
+    image: '/certificates/aws-ml-ai.jpg',
+    pdf: '/certificates/aws-ml-ai.pdf',
+  },
+  {
+    title: 'Oracle Generative AI Professional',
+    issuer: 'Oracle University',
+    description: 'Earned the OCI 2025 professional certification covering generative AI, large language models, and Oracle Cloud AI services.',
+    image: '/certificates/oracle-generative-ai.jpg',
+    pdf: '/certificates/oracle-generative-ai.pdf',
+  },
+  {
+    title: 'Getting Started with AI on Jetson Nano',
+    issuer: 'NVIDIA',
+    description: 'Demonstrated competency in deploying AI workflows and computer vision applications on the NVIDIA Jetson Nano platform.',
+    image: '/certificates/nvidia-jetson-nano.jpg',
+    pdf: '/certificates/nvidia-jetson-nano.pdf',
+  },
+  {
+    title: 'PCB Design Course',
+    issuer: 'Simplilearn',
+    description: 'Completed practical training in printed circuit board design, component placement, routing, and electronic hardware workflows.',
+    image: '/certificates/pcb-design.jpg',
+    pdf: '/certificates/pcb-design.pdf',
+  },
+  {
+    title: 'VLSI Course',
+    issuer: 'Simplilearn',
+    description: 'Completed foundational VLSI training covering integrated circuit design concepts and semiconductor development workflows.',
+    image: '/certificates/vlsi-course.jpg',
+    pdf: '/certificates/vlsi-course.pdf',
+  },
+  {
+    title: 'Basics of Python',
+    issuer: 'Infosys Springboard',
+    description: 'Completed structured training in Python syntax, programming fundamentals, problem solving, and core language concepts.',
+    image: '/certificates/infosys-python.jpg',
+    pdf: '/certificates/infosys-python.pdf',
+  },
+  {
+    title: 'Web Development: HTML, CSS, JavaScript, Bootstrap & React JS',
+    issuer: 'Udemy',
+    description: 'Completed full web development training across responsive interfaces, JavaScript, Bootstrap, and modern React applications.',
+    image: '/certificates/web-development.jpg',
+    pdf: '/certificates/web-development.pdf',
+  },
+  {
+    title: "DOEACC 'O' Level Qualification",
+    issuer: 'NIELIT, Government of India',
+    description: 'Qualified the O Level programme covering IT tools, web design, Python programming, networking, and Internet of Things.',
+    image: '/certificates/o-level.jpg',
+    pdf: '/certificates/o-level.pdf',
+  },
 ];
 
 export const achievements = [

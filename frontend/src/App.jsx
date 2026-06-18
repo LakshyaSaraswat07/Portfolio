@@ -230,12 +230,23 @@ function Projects() {
 
 function Certifications() {
   return (
-    <Section id="certifications" eyebrow="Credentials" title="Certifications & Badges">
+    <Section id="certifications" eyebrow="Credentials" title="Certifications">
       <div className="cert-grid">
         {certifications.map((cert, index) => (
-          <motion.div className="glass cert-card" key={cert} initial={{ opacity: 0, rotateX: 18 }} whileInView={{ opacity: 1, rotateX: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.04 }}>
-            <FaAward /><span>{cert}</span>
-          </motion.div>
+          <motion.article className="glass cert-card" key={cert.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.04 }} whileHover={{ y: -8 }}>
+            <a className="cert-media" href={cert.pdf} target="_blank" rel="noreferrer" aria-label={`View ${cert.title} certificate`}>
+              <img src={cert.image} alt={`${cert.title} certificate preview`} />
+            </a>
+            <div className="cert-content">
+              <div className="cert-title-row">
+                <h3>{cert.title}</h3>
+                <FaAward aria-hidden="true" />
+              </div>
+              <p className="cert-issuer">{cert.issuer}</p>
+              <p className="cert-description">{cert.description}</p>
+              <a className="cert-link" href={cert.pdf} target="_blank" rel="noreferrer">View Certificate <FaExternalLinkAlt /></a>
+            </div>
+          </motion.article>
         ))}
       </div>
     </Section>
