@@ -258,13 +258,16 @@ function Achievements() {
 }
 
 function GitHubSection() {
+  const streakDate = new Date().toISOString().slice(0, 10);
+  const streakUrl = `https://streak-stats.demolab.com?user=LakshyaSaraswat07&theme=transparent&hide_border=true&ring=00F5FF&fire=FF4D8D&currStreakLabel=00F5FF&sideLabels=7B61FF&dates=AAB3C5&date=${streakDate}`;
+
   return (
     <Section id="github" eyebrow="Open Source" title="GitHub & Coding Presence">
       <div className="github-grid">
         <div className="glass github-card">
           <h3>Contribution Graph</h3>
           <img src="https://ghchart.rshah.org/00F5FF/LakshyaSaraswat07" alt="Lakshya Saraswat GitHub contribution graph" />
-          <img className="github-consistency" src="/github-consistency.svg" alt="GitHub consistency, streak, and contribution visualization" />
+          <img className="github-consistency" src={streakUrl} alt="Live GitHub current and longest streak statistics for Lakshya Saraswat" />
         </div>
         <div className="glass stat-panel">
           <FaGithub />
