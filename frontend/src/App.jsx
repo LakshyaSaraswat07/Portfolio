@@ -142,7 +142,7 @@ function Hero() {
           Full Stack Developer, Electronics & Communication Engineer, and AI enthusiast crafting performant web products, intelligent systems, and hardware-software integrations from Kanpur, India.
         </motion.p>
         <motion.div className="hero-actions" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }}>
-          <a className="btn primary" href="/Lakshya-Saraswat-Resume.pdf" target="_blank" rel="noreferrer"><FaEye />View Resume</a>
+          <a className="btn primary" href="/resume/" target="_blank" rel="noreferrer"><FaEye />View Resume</a>
           <a className="btn ghost" href="#projects"><FaRocket />View Projects</a>
           <a className="btn subtle" href="#contact"><FaEnvelope />Contact Me</a>
         </motion.div>
